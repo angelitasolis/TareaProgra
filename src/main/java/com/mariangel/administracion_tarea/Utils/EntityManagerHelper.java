@@ -21,7 +21,7 @@ public class EntityManagerHelper {
 
     static {
         try {
-            emf = Persistence.createEntityManagerFactory("com.jumaikel_Lab3_PU");
+            emf = Persistence.createEntityManagerFactory("com.mariangel_Administracion_Tarea_PU");
             em = emf.createEntityManager();
         } catch (ExceptionInInitializerError e) {
             throw e;
