@@ -1,0 +1,10 @@
+com\mariangel\administracion_tarea\Utils\BindingUtils.class
+com\mariangel\administracion_tarea\Utils\Mensaje.class
+com\mariangel\administracion_tarea\Utils\Formato.class
+com\mariangel\administracion_tarea\Controller\Controller.class
+com\mariangel\administracion_tarea\Utils\EntityManagerHelper.class
+com\mariangel\administracion_tarea\Utils\Respuesta.class
+com\mariangel\administracion_tarea\Utils\FlowController.class
+com\mariangel\administracion_tarea\Utils\AppContext.class
+com\mariangel\administracion_tarea\App.class
+com\mariangel\administracion_tarea\Controller\PantallaPrincipalController.class
