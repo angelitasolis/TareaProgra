@@ -33,7 +33,7 @@ public class Itinerario implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "INT_ID")
-    private Integer intId;
+    private Long intId;
     @Basic(optional = false)
     @Column(name = "INT_LUGAR")
     private String intLugar;
@@ -48,20 +48,20 @@ public class Itinerario implements Serializable {
     public Itinerario() {
     }
 
-    public Itinerario(Integer intId) {
+    public Itinerario(Long intId) {
         this.intId = intId;
     }
 
-    public Itinerario(Integer intId, String intLugar) {
+    public Itinerario(Long intId, String intLugar) {
         this.intId = intId;
         this.intLugar = intLugar;
     }
 
-    public Integer getIntId() {
+    public Long getIntId() {
         return intId;
     }
 
-    public void setIntId(Integer intId) {
+    public void setIntId(Long intId) {
         this.intId = intId;
     }
 
