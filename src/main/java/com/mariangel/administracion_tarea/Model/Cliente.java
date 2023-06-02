@@ -5,6 +5,7 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -78,6 +79,22 @@ public class Cliente implements Serializable {
         this.cltTelefono = cltTelefono;
         this.cltCorreo = cltCorreo;
         this.cltFechanac = cltFechanac;
+    }
+
+    public Cliente(ClienteDto clienteDto) {
+        this.cltCedula = clienteDto.getClienteCedula();
+        actualizar(clienteDto);
+    }
+
+    public void actualizar(ClienteDto clienteDto) {
+        this.cltCedula = clienteDto.getClienteCedula();
+        this.cltNombre = clienteDto.getClienteNombre();
+        this.cltPapellido = clienteDto.getClienteApellido();
+        this.cltSapellido = clienteDto.getClienteSApellido();
+        this.cltTelefono= clienteDto.getClienteTelefono();
+        this.cltCorreo= clienteDto.getClienteCorreo();
+        this.cltFechanac = Date.from(clienteDto.getClienteFecnac().atStartOfDay(ZoneId.systemDefault()).toInstant());
+
     }
 
     public String getCltCedula() {
@@ -168,5 +185,5 @@ public class Cliente implements Serializable {
     public String toString() {
         return "com.mariangel.administracion_tarea.Model.Cliente[ cltCedula=" + cltCedula + " ]";
     }
-    
+
 }

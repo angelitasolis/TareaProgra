@@ -79,6 +79,14 @@ public class ClienteDto {
         this.cltCedula.set(pcltSapellido.toString());
     }
 
+    public String getClienteCorreo() {
+        return cltCorreo.get();
+    }
+
+    public void setClienteCorreo(String pcltSapellido) {
+        this.cltCorreo.set(pcltSapellido.toString());
+    }
+
     public Long getClienteTelefono() {
         String value = this.cltTelefono.get();
         if (value != null) {
