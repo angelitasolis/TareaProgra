@@ -63,19 +63,19 @@ public class Tipotour implements Serializable {
         this.ttNombretour = ttNombretour;
         this.ttPais = ttPais;
     }
-    
-    
-     public Tipotour(TipoTourDto tipotourDto) {
+
+    public Tipotour(TipoTourDto tipotourDto) {
         this.ttCodigo = tipotourDto.getTptCodigo();
         actualizar(tipotourDto);
     }
-    
+
     public void actualizar(TipoTourDto tipoTourDto) {
         this.ttCodigo = tipoTourDto.getTptCodigo();
         this.ttTipo = tipoTourDto.getTptTipo();
         this.ttNombretour = tipoTourDto.getTptNombre();
         this.ttPais = tipoTourDto.getTptPais();
     }
+
     public Long getTtCodigo() {
         return ttCodigo;
     }
@@ -138,12 +138,9 @@ public class Tipotour implements Serializable {
         return Objects.equals(this.ttCodigo, other.ttCodigo);
     }
 
-    
-
     @Override
     public String toString() {
         return "Tipotour{" + "ttCodigo=" + ttCodigo + ", ttTipo=" + ttTipo + ", ttNombretour=" + ttNombretour + ", ttPais=" + ttPais + ", tourCollection=" + tourCollection + '}';
     }
 
-   
 }
