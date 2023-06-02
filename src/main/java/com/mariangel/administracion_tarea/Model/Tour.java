@@ -53,10 +53,10 @@ public class Tour implements Serializable {
     private Date trsFechallegada;
     @Basic(optional = false)
     @Column(name = "TRS_COSTOTOUR")
-    private int trsCostotour;
+    private Long trsCostotour;
     @Basic(optional = false)
     @Column(name = "TRS_CANTIDADCLIENTES")
-    private int trsCantidadclientes;
+    private Long trsCantidadclientes;
     @Id
     @Basic(optional = false)
     @Column(name = "TRS_CODIGOTOUR")
@@ -85,7 +85,7 @@ public class Tour implements Serializable {
         this.trsCodigotour = trsCodigotour;
     }
 
-    public Tour(String trsCodigotour, String trsNombre, Date trsFechasalida, Date trsFechallegada, int trsCostotour, int trsCantidadclientes, short trsHorasalida, short trsHorallegada) {
+    public Tour(String trsCodigotour, String trsNombre, Date trsFechasalida, Date trsFechallegada, Long trsCostotour, Long trsCantidadclientes, short trsHorasalida, short trsHorallegada) {
         this.trsCodigotour = trsCodigotour;
         this.trsNombre = trsNombre;
         this.trsFechasalida = trsFechasalida;
@@ -120,19 +120,19 @@ public class Tour implements Serializable {
         this.trsFechallegada = trsFechallegada;
     }
 
-    public int getTrsCostotour() {
+    public Long getTrsCostotour() {
         return trsCostotour;
     }
 
-    public void setTrsCostotour(int trsCostotour) {
+    public void setTrsCostotour(Long trsCostotour) {
         this.trsCostotour = trsCostotour;
     }
 
-    public int getTrsCantidadclientes() {
+    public Long getTrsCantidadclientes() {
         return trsCantidadclientes;
     }
 
-    public void setTrsCantidadclientes(int trsCantidadclientes) {
+    public void setTrsCantidadclientes(Long trsCantidadclientes) {
         this.trsCantidadclientes = trsCantidadclientes;
     }
 

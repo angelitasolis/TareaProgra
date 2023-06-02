@@ -47,8 +47,8 @@ public class ClienteDto {
         this.cltFechanac.set(cliente.getCltFechanac().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
     }
 
-    public void setClienteNombre(String pacNombre) {
-        this.cltNombre.set(pacNombre);
+    public void setClienteNombre(String pCliente) {
+        this.cltNombre.set(pCliente);
     }
 
     public String getClienteNombre() {
@@ -59,24 +59,24 @@ public class ClienteDto {
         return cltPapellido.get();
     }
 
-    public void setClientePApellido(String pacPapellido) {
-        this.cltPapellido.set(pacPapellido);
+    public void setClientePApellido(String pcltPapellido) {
+        this.cltPapellido.set(pcltPapellido);
     }
 
     public String getClienteSApellido() {
         return cltSapellido.get();
     }
 
-    public void setClienteSApellido(String pacSapellido) {
-        this.cltSapellido.set(pacSapellido);
+    public void setClienteSApellido(String pcltSapellido) {
+        this.cltSapellido.set(pcltSapellido);
     }
 
     public String getClienteCedula() {
         return cltCedula.get();
     }
 
-    public void setClienteCedula(String empCedula) {
-        this.cltCedula.set(empCedula.toString());
+    public void setClienteCedula(String pcltSapellido) {
+        this.cltCedula.set(pcltSapellido.toString());
     }
 
     public Long getClienteTelefono() {

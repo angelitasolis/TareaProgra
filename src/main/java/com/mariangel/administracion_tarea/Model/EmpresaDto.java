@@ -43,8 +43,8 @@ public class EmpresaDto {
         this.emTelefono.set(Long.toString(empresa.getEmCalificacion()));
     }
 
-    public void setEmpresaNombre(String pacNombre) {
-        this.emNombre.set(pacNombre);
+    public void setEmpresaNombre(String pemNombre) {
+        this.emNombre.set(pemNombre);
     }
 
     public String getEmpresaNombre() {
@@ -55,8 +55,8 @@ public class EmpresaDto {
         return emCedulajuridica.get();
     }
 
-    public void setEmpresaCedJuridica(String pacNombre) {
-        this.emCedulajuridica.set(pacNombre);
+    public void setEmpresaCedJuridica(String pCedJuridica) {
+        this.emCedulajuridica.set(pCedJuridica);
     }
 
     public Long getEmpresaTelefono() {
