@@ -45,7 +45,7 @@ public class Empresa implements Serializable {
     private String emCedulajuridica;
     @Basic(optional = false)
     @Column(name = "EM_TELEFONO")
-    private long emTelefono;
+    private Long emTelefono;
     @Basic(optional = false)
     @Column(name = "EM_CORREO")
     private String emCorreo;
@@ -54,7 +54,7 @@ public class Empresa implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date emFechafundacion;
     @Column(name = "EM_CALIFICACION")
-    private Integer emCalificacion;
+    private Long emCalificacion;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "trsEmpresacedjur")
     private Collection<Tour> tourCollection;
 
@@ -65,7 +65,7 @@ public class Empresa implements Serializable {
         this.emCedulajuridica = emCedulajuridica;
     }
 
-    public Empresa(String emCedulajuridica, String emNombre, long emTelefono, String emCorreo, Date emFechafundacion) {
+    public Empresa(String emCedulajuridica, String emNombre, Long emTelefono, String emCorreo, Date emFechafundacion) {
         this.emCedulajuridica = emCedulajuridica;
         this.emNombre = emNombre;
         this.emTelefono = emTelefono;
@@ -89,11 +89,11 @@ public class Empresa implements Serializable {
         this.emCedulajuridica = emCedulajuridica;
     }
 
-    public long getEmTelefono() {
+    public Long getEmTelefono() {
         return emTelefono;
     }
 
-    public void setEmTelefono(long emTelefono) {
+    public void setEmTelefono(Long emTelefono) {
         this.emTelefono = emTelefono;
     }
 
@@ -113,11 +113,11 @@ public class Empresa implements Serializable {
         this.emFechafundacion = emFechafundacion;
     }
 
-    public Integer getEmCalificacion() {
+    public Long getEmCalificacion() {
         return emCalificacion;
     }
 
-    public void setEmCalificacion(Integer emCalificacion) {
+    public void setEmCalificacion(Long emCalificacion) {
         this.emCalificacion = emCalificacion;
     }
 

@@ -72,7 +72,7 @@ public class Tour implements Serializable {
     private Empresa trsEmpresacedjur;
     @JoinColumn(name = "TRS_TIPOTOURCODIGO", referencedColumnName = "TT_CODIGO")
     @ManyToOne(optional = false)
-    private TipoTour trsTipotourcodigo;
+    private Tipotour trsTipotourcodigo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rsCodigotour")
     private Collection<Reserva> reservaCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "intCodigotour")
@@ -168,11 +168,11 @@ public class Tour implements Serializable {
         this.trsEmpresacedjur = trsEmpresacedjur;
     }
 
-    public TipoTour getTrsTipotourcodigo() {
+    public Tipotour getTrsTipotourcodigo() {
         return trsTipotourcodigo;
     }
 
-    public void setTrsTipotourcodigo(TipoTour trsTipotourcodigo) {
+    public void setTrsTipotourcodigo(Tipotour trsTipotourcodigo) {
         this.trsTipotourcodigo = trsTipotourcodigo;
     }
 

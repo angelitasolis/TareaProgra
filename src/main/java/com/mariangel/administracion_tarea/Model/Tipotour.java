@@ -23,12 +23,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TBL_TIPOTOUR")
 @NamedQueries({
-    @NamedQuery(name = "TipoTour.findAll", query = "SELECT t FROM TipoTour t"),
-    @NamedQuery(name = "TipoTour.findByTtCodigo", query = "SELECT t FROM TipoTour t WHERE t.ttCodigo = :ttCodigo"),
-    @NamedQuery(name = "TipoTour.findByTtTipo", query = "SELECT t FROM TipoTour t WHERE t.ttTipo = :ttTipo"),
-    @NamedQuery(name = "TipoTour.findByTtNombretour", query = "SELECT t FROM TipoTour t WHERE t.ttNombretour = :ttNombretour"),
-    @NamedQuery(name = "TipoTour.findByTtPais", query = "SELECT t FROM TipoTour t WHERE t.ttPais = :ttPais")})
-public class TipoTour implements Serializable {
+    @NamedQuery(name = "Tipotour.findAll", query = "SELECT t FROM Tipotour t"),
+    @NamedQuery(name = "Tipotour.findByTtCodigo", query = "SELECT t FROM Tipotour t WHERE t.ttCodigo = :ttCodigo"),
+    @NamedQuery(name = "Tipotour.findByTtTipo", query = "SELECT t FROM Tipotour t WHERE t.ttTipo = :ttTipo"),
+    @NamedQuery(name = "Tipotour.findByTtNombretour", query = "SELECT t FROM Tipotour t WHERE t.ttNombretour = :ttNombretour"),
+    @NamedQuery(name = "Tipotour.findByTtPais", query = "SELECT t FROM Tipotour t WHERE t.ttPais = :ttPais")})
+public class Tipotour implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -47,14 +47,14 @@ public class TipoTour implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "trsTipotourcodigo")
     private Collection<Tour> tourCollection;
 
-    public TipoTour() {
+    public Tipotour() {
     }
 
-    public TipoTour(Integer ttCodigo) {
+    public Tipotour(Integer ttCodigo) {
         this.ttCodigo = ttCodigo;
     }
 
-    public TipoTour(Integer ttCodigo, String ttTipo, String ttNombretour, String ttPais) {
+    public Tipotour(Integer ttCodigo, String ttTipo, String ttNombretour, String ttPais) {
         this.ttCodigo = ttCodigo;
         this.ttTipo = ttTipo;
         this.ttNombretour = ttNombretour;
@@ -111,10 +111,10 @@ public class TipoTour implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoTour)) {
+        if (!(object instanceof Tipotour)) {
             return false;
         }
-        TipoTour other = (TipoTour) object;
+        Tipotour other = (Tipotour) object;
         if ((this.ttCodigo == null && other.ttCodigo != null) || (this.ttCodigo != null && !this.ttCodigo.equals(other.ttCodigo))) {
             return false;
         }
@@ -123,7 +123,7 @@ public class TipoTour implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mariangel.administracion_tarea.Model.TipoTour[ ttCodigo=" + ttCodigo + " ]";
+        return "com.mariangel.administracion_tarea.Model.Tipotour[ ttCodigo=" + ttCodigo + " ]";
     }
     
 }

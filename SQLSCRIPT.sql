@@ -40,7 +40,7 @@ create table TBL_EMPRESA
   em_telefono       NUMBER(15) not null,
   em_correo         VARCHAR2(100) not null,
   em_fechafundacion DATE not null,
-  em_calificacion   NUMBER(5)
+  em_calificacion   NUMBER(1)
 )
 tablespace UNA
   pctfree 10
@@ -59,6 +59,9 @@ alter table TBL_EMPRESA
   pctfree 10
   initrans 2
   maxtrans 255;
+alter table TBL_EMPRESA
+  add constraint CHECK_CALIFICACION
+  check (EM_CALIFICACION >=1 And  EM_CALIFICACION<= 5);
 
 prompt Creating TBL_TIPOTOUR...
 create table TBL_TIPOTOUR

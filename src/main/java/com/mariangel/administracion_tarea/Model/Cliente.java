@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Cliente.findByCltFechanac", query = "SELECT c FROM Cliente c WHERE c.cltFechanac = :cltFechanac")})
 public class Cliente implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "CLT_CEDULA")
@@ -52,7 +52,7 @@ public class Cliente implements Serializable {
     private String cltSapellido;
     @Basic(optional = false)
     @Column(name = "CLT_TELEFONO")
-    private long cltTelefono;
+    private Long cltTelefono;
     @Basic(optional = false)
     @Column(name = "CLT_CORREO")
     private String cltCorreo;
@@ -70,7 +70,7 @@ public class Cliente implements Serializable {
         this.cltCedula = cltCedula;
     }
 
-    public Cliente(String cltCedula, String cltNombre, String cltPapellido, String cltSapellido, long cltTelefono, String cltCorreo, Date cltFechanac) {
+    public Cliente(String cltCedula, String cltNombre, String cltPapellido, String cltSapellido, Long cltTelefono, String cltCorreo, Date cltFechanac) {
         this.cltCedula = cltCedula;
         this.cltNombre = cltNombre;
         this.cltPapellido = cltPapellido;
@@ -112,11 +112,11 @@ public class Cliente implements Serializable {
         this.cltSapellido = cltSapellido;
     }
 
-    public long getCltTelefono() {
+    public Long getCltTelefono() {
         return cltTelefono;
     }
 
-    public void setCltTelefono(long cltTelefono) {
+    public void setCltTelefono(Long cltTelefono) {
         this.cltTelefono = cltTelefono;
     }
 

@@ -8,6 +8,7 @@
     <class>com.mariangel.administracion_tarea.Model.TipoTour</class>
     <class>com.mariangel.administracion_tarea.Model.Itinerario</class>
     <class>com.mariangel.administracion_tarea.Model.Tour</class>
+    <class>com.mariangel.administracion_tarea.Model.Tipotour</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:UNA"/>
       <property name="javax.persistence.jdbc.user" value="MSOLIS"/>
