@@ -6,6 +6,7 @@ package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -34,7 +35,7 @@ public class Tipotour implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "TT_CODIGO")
-    private Integer ttCodigo;
+    private Long ttCodigo;
     @Basic(optional = false)
     @Column(name = "TT_TIPO")
     private String ttTipo;
@@ -50,22 +51,22 @@ public class Tipotour implements Serializable {
     public Tipotour() {
     }
 
-    public Tipotour(Integer ttCodigo) {
+    public Tipotour(Long ttCodigo) {
         this.ttCodigo = ttCodigo;
     }
 
-    public Tipotour(Integer ttCodigo, String ttTipo, String ttNombretour, String ttPais) {
+    public Tipotour(Long ttCodigo, String ttTipo, String ttNombretour, String ttPais) {
         this.ttCodigo = ttCodigo;
         this.ttTipo = ttTipo;
         this.ttNombretour = ttNombretour;
         this.ttPais = ttPais;
     }
 
-    public Integer getTtCodigo() {
+    public Long getTtCodigo() {
         return ttCodigo;
     }
 
-    public void setTtCodigo(Integer ttCodigo) {
+    public void setTtCodigo(Long ttCodigo) {
         this.ttCodigo = ttCodigo;
     }
 
@@ -103,27 +104,32 @@ public class Tipotour implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (ttCodigo != null ? ttCodigo.hashCode() : 0);
+        int hash = 7;
+        hash = 73 * hash + Objects.hashCode(this.ttCodigo);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tipotour)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Tipotour other = (Tipotour) object;
-        if ((this.ttCodigo == null && other.ttCodigo != null) || (this.ttCodigo != null && !this.ttCodigo.equals(other.ttCodigo))) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
-        return true;
+        final Tipotour other = (Tipotour) obj;
+        return Objects.equals(this.ttCodigo, other.ttCodigo);
     }
+
+    
 
     @Override
     public String toString() {
-        return "com.mariangel.administracion_tarea.Model.Tipotour[ ttCodigo=" + ttCodigo + " ]";
+        return "Tipotour{" + "ttCodigo=" + ttCodigo + ", ttTipo=" + ttTipo + ", ttNombretour=" + ttNombretour + ", ttPais=" + ttPais + ", tourCollection=" + tourCollection + '}';
     }
-    
+
+   
 }

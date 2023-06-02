@@ -35,14 +35,14 @@ public class Reserva implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "RS_ID")
-    private Integer rsId;
+    private Long rsId;
     @Basic(optional = false)
     @Column(name = "RS_FECHARESERVA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date rsFechareserva;
     @Basic(optional = false)
     @Column(name = "RS_MONTOABONADO")
-    private int rsMontoabonado;
+    private Long rsMontoabonado;
     @JoinColumn(name = "RS_CEDULACLIENTE", referencedColumnName = "CLT_CEDULA")
     @ManyToOne(optional = false)
     private Cliente rsCedulacliente;
@@ -53,21 +53,21 @@ public class Reserva implements Serializable {
     public Reserva() {
     }
 
-    public Reserva(Integer rsId) {
+    public Reserva(Long rsId) {
         this.rsId = rsId;
     }
 
-    public Reserva(Integer rsId, Date rsFechareserva, int rsMontoabonado) {
+    public Reserva(Long rsId, Date rsFechareserva, Long rsMontoabonado) {
         this.rsId = rsId;
         this.rsFechareserva = rsFechareserva;
         this.rsMontoabonado = rsMontoabonado;
     }
 
-    public Integer getRsId() {
+    public Long getRsId() {
         return rsId;
     }
 
-    public void setRsId(Integer rsId) {
+    public void setRsId(Long rsId) {
         this.rsId = rsId;
     }
 
@@ -79,11 +79,11 @@ public class Reserva implements Serializable {
         this.rsFechareserva = rsFechareserva;
     }
 
-    public int getRsMontoabonado() {
+    public Long getRsMontoabonado() {
         return rsMontoabonado;
     }
 
-    public void setRsMontoabonado(int rsMontoabonado) {
+    public void setRsMontoabonado(Long rsMontoabonado) {
         this.rsMontoabonado = rsMontoabonado;
     }
 
