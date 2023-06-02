@@ -40,6 +40,7 @@ public class EmpresaDto {
         this.emCalificacion.set(Long.toString(empresa.getEmCalificacion()));
         this.emCorreo.set(empresa.getEmCorreo());
         this.emFechafundacion.set(empresa.getEmFechafundacion().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        this.emTelefono.set(Long.toString(empresa.getEmCalificacion()));
     }
 
     public void setEmpresaNombre(String pacNombre) {
@@ -54,23 +55,46 @@ public class EmpresaDto {
         return emCedulajuridica.get();
     }
 
-    public void setEmpresaCedJuridica(Long pemCedulajuridica) {
-        if (pemCedulajuridica != null) {
-            this.emCedulajuridica.set(Long.toString(pemCedulajuridica));
+    public void setEmpresaCedJuridica(String pacNombre) {
+        this.emCedulajuridica.set(pacNombre);
+    }
+
+    public Long getEmpresaTelefono() {
+        String value = this.emTelefono.get();
+        if (value != null) {
+            try {
+                return Long.parseLong(value);
+            } catch (NumberFormatException e) {
+            }
+        }
+        return null;
+
+    }
+
+    public void setEmpresaTelefono(Long pemTelefono) {
+        if (pemTelefono != null) {
+            this.emTelefono.set(Long.toString(pemTelefono));
         } else {
-            this.emCedulajuridica.set(null);
+            this.emTelefono.set(null);
         }
     }
 
-    public String getEmpresCalificacion() {
-        return emCalificacion.get();
+    public Long getEmpresCalificacion() {
+        String value = this.emCalificacion.get();
+        if (value != null) {
+            try {
+                return Long.parseLong(value);
+            } catch (NumberFormatException e) {
+            }
+        }
+        return null;
     }
 
     public void setEmpresCalificacion(Long pemCalificacion) {
         if (pemCalificacion != null) {
-            this.emCedulajuridica.set(Long.toString(pemCalificacion));
+            this.emCalificacion.set(Long.toString(pemCalificacion));
         } else {
-            this.emCedulajuridica.set(null);
+            this.emCalificacion.set(null);
         }
     }
 

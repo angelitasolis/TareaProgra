@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Cliente.findByCltFechanac", query = "SELECT c FROM Cliente c WHERE c.cltFechanac = :cltFechanac")})
 public class Cliente implements Serializable {
 
-    private static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "CLT_CEDULA")
