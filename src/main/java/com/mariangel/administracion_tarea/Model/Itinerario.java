@@ -5,6 +5,8 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -56,7 +58,20 @@ public class Itinerario implements Serializable {
         this.intId = intId;
         this.intLugar = intLugar;
     }
+    
+      public Itinerario(ItinerarioDto itinerarioDto) {
+        this.intId = itinerarioDto.getItinerarioId();
+        actualizar(itinerarioDto);
+    }
 
+    public void actualizar(ItinerarioDto itinerarioDto) {
+        this.intId = itinerarioDto.getItinerarioId();
+        this.intLugar = itinerarioDto.getItinerarioLugar();
+        this.intDuracion = itinerarioDto.getItinerarioDuracion();
+        this.intActividades = itinerarioDto.getItinerarioActividades();
+        
+    
+    }
     public Long getIntId() {
         return intId;
     }

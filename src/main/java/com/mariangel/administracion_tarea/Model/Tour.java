@@ -5,6 +5,7 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -94,6 +95,23 @@ public class Tour implements Serializable {
         this.trsCantidadclientes = trsCantidadclientes;
         this.trsHorasalida = trsHorasalida;
         this.trsHorallegada = trsHorallegada;
+    }
+
+    public Tour(TourDto tourDto) {
+        this.trsCodigotour = tourDto.getTrsCodigo();
+        actualizar(tourDto);
+    }
+
+    public void actualizar(TourDto tourDto) {
+        this.trsCodigotour = tourDto.getTrsCodigo();
+        this.trsNombre = tourDto.getTrsNombre();
+        this.trsFechallegada = Date.from(tourDto.getTrsFechallegada().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        this.trsFechasalida = Date.from(tourDto.getTrsFechasalida().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        this.trsCostotour = tourDto.getTrsCosto();
+        this.trsCantidadclientes = tourDto.getTrsClientes();
+        this.trsHorasalida = tourDto.getTrsHorallegada();
+        this.trsHorallegada = tourDto.getTrsHorallegada();
+
     }
 
     public String getTrsNombre() {
@@ -216,5 +234,5 @@ public class Tour implements Serializable {
     public String toString() {
         return "com.mariangel.administracion_tarea.Model.Tour[ trsCodigotour=" + trsCodigotour + " ]";
     }
-    
+
 }

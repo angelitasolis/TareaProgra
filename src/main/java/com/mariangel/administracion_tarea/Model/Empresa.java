@@ -5,6 +5,7 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -71,6 +72,20 @@ public class Empresa implements Serializable {
         this.emTelefono = emTelefono;
         this.emCorreo = emCorreo;
         this.emFechafundacion = emFechafundacion;
+    }
+
+    public Empresa(EmpresaDto empresaDto) {
+        this.emCedulajuridica = empresaDto.getEmpresaCedJuridica();
+        actualizar(empresaDto);
+    }
+
+    public void actualizar(EmpresaDto empresaDto) {
+        this.emNombre = empresaDto.getEmpresaNombre();
+        this.emTelefono = empresaDto.getEmpresaTelefono();
+        this.emCorreo = empresaDto.getEmpresaCorreo();
+        this.emCedulajuridica = empresaDto.getEmpresaCedJuridica();
+        this.emFechafundacion = Date.from(empresaDto.getEmpresaFechafundacion().atStartOfDay(ZoneId.systemDefault()).toInstant());
+    
     }
 
     public String getEmNombre() {
@@ -153,5 +168,5 @@ public class Empresa implements Serializable {
     public String toString() {
         return "com.mariangel.administracion_tarea.Model.Empresa[ emCedulajuridica=" + emCedulajuridica + " ]";
     }
-    
+
 }
