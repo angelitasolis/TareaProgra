@@ -94,7 +94,6 @@ public class Cliente implements Serializable {
         this.cltTelefono= clienteDto.getClienteTelefono();
         this.cltCorreo= clienteDto.getClienteCorreo();
         this.cltFechanac = Date.from(clienteDto.getClienteFecnac().atStartOfDay(ZoneId.systemDefault()).toInstant());
-
     }
 
     public String getCltCedula() {
@@ -183,7 +182,9 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mariangel.administracion_tarea.Model.Cliente[ cltCedula=" + cltCedula + " ]";
+        return "Cliente{" + "cltCedula=" + cltCedula + ", cltNombre=" + cltNombre + ", cltPapellido=" + cltPapellido + ", cltSapellido=" + cltSapellido + ", cltTelefono=" + cltTelefono + ", cltCorreo=" + cltCorreo + ", cltFechanac=" + cltFechanac + ", reservaCollection=" + reservaCollection + '}';
     }
+
+   
 
 }
