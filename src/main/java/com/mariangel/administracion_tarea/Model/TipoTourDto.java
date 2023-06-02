@@ -32,8 +32,8 @@ public class TipoTourDto {
         this.ttPais.set(tipotour.getTtPais());
     }
 
-    public String getTptCodigo() {
-        return ttCodigo.get();
+    public Long getTptCodigo() {
+        return Long.valueOf(ttCodigo.get());
     }
 
     public String getTptTipo() {
@@ -49,7 +49,8 @@ public class TipoTourDto {
     }
 
     public void setTptCodigo(Long tptCodigo) {
-        this.ttCodigo.set(tptCodigo.toString());
+         this.ttCodigo.set(tptCodigo.toString());
+    
     }
 
     public void setTptTipo(String tptTipo) {

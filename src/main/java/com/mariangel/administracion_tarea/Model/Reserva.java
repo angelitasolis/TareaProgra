@@ -5,6 +5,7 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -61,6 +62,18 @@ public class Reserva implements Serializable {
         this.rsId = rsId;
         this.rsFechareserva = rsFechareserva;
         this.rsMontoabonado = rsMontoabonado;
+    }
+
+    public Reserva(ReservaDto reservacionDto) {
+        this.rsId = reservacionDto.getReservaId();
+        actualizar(reservacionDto);
+    }
+
+    public void actualizar(ReservaDto reservacionDto) {
+        this.rsId = reservacionDto.getReservaId();
+        this.rsFechareserva = Date.from(reservacionDto.getReservaFecnac().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        this.rsMontoabonado = reservacionDto.getReservaMontoabonado();
+
     }
 
     public Long getRsId() {
@@ -127,5 +140,5 @@ public class Reserva implements Serializable {
     public String toString() {
         return "com.mariangel.administracion_tarea.Model.Reserva[ rsId=" + rsId + " ]";
     }
-    
+
 }

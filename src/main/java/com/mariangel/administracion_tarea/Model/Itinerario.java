@@ -70,7 +70,6 @@ public class Itinerario implements Serializable {
         this.intDuracion = itinerarioDto.getItinerarioDuracion();
         this.intActividades = itinerarioDto.getItinerarioActividades();
         
-    
     }
     public Long getIntId() {
         return intId;

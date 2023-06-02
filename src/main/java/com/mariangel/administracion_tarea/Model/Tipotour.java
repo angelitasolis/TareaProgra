@@ -5,7 +5,9 @@
 package com.mariangel.administracion_tarea.Model;
 
 import java.io.Serializable;
+import java.time.ZoneId;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -61,7 +63,19 @@ public class Tipotour implements Serializable {
         this.ttNombretour = ttNombretour;
         this.ttPais = ttPais;
     }
-
+    
+    
+     public Tipotour(TipoTourDto tipotourDto) {
+        this.ttCodigo = tipotourDto.getTptCodigo();
+        actualizar(tipotourDto);
+    }
+    
+    public void actualizar(TipoTourDto tipoTourDto) {
+        this.ttCodigo = tipoTourDto.getTptCodigo();
+        this.ttTipo = tipoTourDto.getTptTipo();
+        this.ttNombretour = tipoTourDto.getTptNombre();
+        this.ttPais = tipoTourDto.getTptPais();
+    }
     public Long getTtCodigo() {
         return ttCodigo;
     }
