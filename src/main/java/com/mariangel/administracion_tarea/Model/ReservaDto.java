@@ -27,6 +27,14 @@ public class ReservaDto {
 
     }
 
+    public ReservaDto(Reserva reserva){
+        this();
+        this.rsId.set(reserva.getRsId().toString());
+        this.rsMontoabonado.set(reserva.getRsMontoabonado().toString());
+        this.rsFechareserva.set(reserva.getRsFechareserva().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+    }
+    
+
     public Long getReservaId() {
         String value = this.rsId.get();
         if (value != null) {
